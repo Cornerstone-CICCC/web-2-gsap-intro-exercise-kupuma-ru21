@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const tl = gsap.timeline({ repeat: -1, yoyo: true });
+  const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
   const windowInnerWidth = window.innerWidth;
   const windowInnerHeight = window.innerHeight;
   expandBox(tl, "red");
