@@ -2,11 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const tl = gsap.timeline({ repeat: -1, yoyo: true });
   const windowInnerWidth = window.innerWidth;
   const windowInnerHeight = window.innerHeight;
-  tl.fromTo(
-    ".red, .green, .blue, .yellow",
-    { height: "0px", width: "0px" },
-    { height: `${WIDTH_HEIGHT}PX`, width: `${WIDTH_HEIGHT}PX`, duration: 1 }
-  );
+  expandBox(tl, "red");
+  expandBox(tl, "green");
+  expandBox(tl, "blue");
+  expandBox(tl, "yellow");
   tl.fromTo(
     ".red",
     { x: "0px" },
@@ -65,3 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const WIDTH_HEIGHT = 200;
+
+const expandBox = (tl, className) => {
+  tl.fromTo(
+    `.${className}`,
+    { height: "0px", width: "0px" },
+    { height: `${WIDTH_HEIGHT}PX`, width: `${WIDTH_HEIGHT}PX`, duration: 1 }
+  );
+};
